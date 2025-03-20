@@ -3,16 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shurtado <shurtado@student.42.fr>          +#+  +:+       +#+        */
+/*   By: shurtado <shurtado@student.42barcelona.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 23:47:25 by shurtado          #+#    #+#             */
-/*   Updated: 2025/03/18 23:50:22 by shurtado         ###   ########.fr       */
+/*   Updated: 2025/03/20 11:35:02 by shurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <sstream>
 #include "RPN.hpp"
+
+RPN::RPN() {}
+
+RPN::RPN(const RPN &other) { this->stack = other.stack; }
+
+RPN &RPN::operator=(const RPN &other)
+{
+	if (this != &other)
+		this->stack = other.stack;
+	return *this;
+}
+
+RPN::~RPN() {}
 
 int RPN::evaluate(const std::string &expression)
 {
@@ -41,13 +54,10 @@ int RPN::evaluate(const std::string &expression)
 			}
 		}
 		else
-		{
 			throw std::runtime_error("Error: Token inválido.");
-		}
 	}
 
 	if (stack.size() != 1)
 		throw std::runtime_error("Error: Expresión inválida.");
-
 	return stack.top();
 }

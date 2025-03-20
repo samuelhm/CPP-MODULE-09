@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shurtado <shurtado@student.42barcelona.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/20 11:29:27 by shurtado          #+#    #+#             */
-/*   Updated: 2025/03/20 11:38:24 by shurtado         ###   ########.fr       */
+/*   Created: 2025/03/20 11:58:27 by shurtado          #+#    #+#             */
+/*   Updated: 2025/03/20 11:59:22 by shurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
-#include <iostream>
 
-int main(int argc, char *argv[])
+#include "PmergeMe.hpp"
+
+PmergeMe::PmergeMe() {}
+
+PmergeMe::PmergeMe(const PmergeMe &other) {}
+
+PmergeMe& PmergeMe::operator=(const PmergeMe &other)
 {
-	if (argc != 2)
-	{
-		std::cout << "use: " << argv[0] << " \"expression\"\n";
+	if (this != &other) {
+		// Copiar los atributos necesarios
 	}
-	try
-	{
-		RPN rpn;
-		std::cout << rpn.evaluate(argv[1]) << "\n";
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << '\n';
-	}
-
+	return *this;
 }
+
+PmergeMe::~PmergeMe() {}
+
