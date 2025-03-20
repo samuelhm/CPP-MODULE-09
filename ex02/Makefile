@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: shurtado <shurtado@student.42barcelona.fr> +#+  +:+       +#+         #
+#    By: shurtado <shurtado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/18 10:55:42 by shurtado          #+#    #+#              #
-#    Updated: 2025/03/20 11:53:12 by shurtado         ###   ########.fr        #
+#    Updated: 2025/03/20 13:39:07 by shurtado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		=	PmergeMe
 CC			=	c++
 CPPFLAGS	=	-std=c++98 -g -Wall -Werror -Wextra -MMD -MP -fsanitize=address -pedantic
 
-SRC			=	main.cpp RPN.cpp
+SRC			=	main.cpp PmergeMe.cpp
 
 OBJS		=	$(SRC:%.cpp=obj/%.o)
 DEPS		=	$(OBJS:.o=.d)
